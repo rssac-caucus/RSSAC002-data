@@ -1,0 +1,9 @@
+---
+service: l.root-servers.net
+start-period: '2015-05-09T00:00:00Z'
+end-period: '2015-05-09T23:59:59Z'
+metric: unique-sources
+num-sources-ipv4: 5996863
+num-sources-ipv6: 527999
+num-sources-ipv6-aggregate: 239854
+

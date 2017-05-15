@@ -1,0 +1,14 @@
+---
+service: h.root-servers.net
+metric: rcode-volume
+start-period: '2015-08-27T00:00:00Z'
+end-period: '2015-08-27T23:59:59Z'
+rcodes:
+  0: 692145908
+  1: 2854057
+  16: 10
+  2: 104
+  3: 1449145748
+  4: 1351295
+  5: 41252
+  9: 6

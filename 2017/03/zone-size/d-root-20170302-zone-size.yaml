@@ -1,0 +1,10 @@
+---
+version: rssac002v3
+service: d.root-servers.net
+start-period: '2017-03-02T00:00:00Z'
+end-period: '2017-03-02T23:59:59Z'
+metric: zone-size
+size:
+   2017030200: 1470042
+   2017030201: 1470042
+   2017030202: 1470042

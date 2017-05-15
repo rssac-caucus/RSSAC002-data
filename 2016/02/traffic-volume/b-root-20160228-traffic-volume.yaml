@@ -1,0 +1,14 @@
+---
+service: b.root-servers.net
+start-period: '2016-02-28T00:00:00Z'
+end-period: '2016-02-28T23:59:59Z'
+metric: traffic-volume
+dns-udp-queries-received-ipv4: 2102564309
+dns-udp-queries-received-ipv6: 148808830
+dns-tcp-queries-received-ipv4: 40683342
+dns-tcp-queries-received-ipv6: 735263
+dns-udp-responses-sent-ipv4: 1835968212
+dns-udp-responses-sent-ipv6: 148423995
+dns-tcp-responses-sent-ipv4: 40398970
+dns-tcp-responses-sent-ipv6: 731401
+

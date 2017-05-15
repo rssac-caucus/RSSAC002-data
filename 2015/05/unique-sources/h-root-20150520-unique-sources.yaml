@@ -1,0 +1,8 @@
+---
+service: h.root-servers.net
+metric: unique-sources
+start-period: '2015-05-20T00:00:00Z'
+end-period: '2015-05-20T23:59:59Z'
+num-sources-ipv4: 2355792
+num-sources-ipv6: 143082
+num-sources-ipv6-aggregate: 75797

@@ -1,0 +1,9 @@
+---
+service: d.root-servers.net
+start-period: '2016-04-27T00:00:00Z'
+end-period: '2016-04-27T23:59:59Z'
+metric: zone-size
+size:
+   2016042601: 875819
+   2016042700: 875328
+   2016042701: 875328

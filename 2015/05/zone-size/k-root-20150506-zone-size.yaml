@@ -1,0 +1,8 @@
+---
+service: k.root-servers.net
+metric: zone-size
+start-period: 2015-05-06T00:00:00Z
+end-period: 2015-05-06T23:59:59Z
+size:
+  2015050600: 568374
+  2015050601: 568374

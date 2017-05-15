@@ -1,0 +1,9 @@
+---
+service: l.root-servers.net
+start-period: '2016-09-11T00:00:00Z'
+end-period: '2016-09-11T23:59:59Z'
+metric: zone-size
+size:
+  '2016091100': 1159968
+  '2016091101': 1159968
+

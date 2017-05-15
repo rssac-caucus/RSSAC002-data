@@ -1,0 +1,8 @@
+---
+service: c.root-servers.net
+start-period: '2016-06-06T00:00:00Z'
+end-period: '2016-06-06T23:59:59Z'
+metric: load-time
+time:
+  '2016060600':  2
+  '2016060601':  0

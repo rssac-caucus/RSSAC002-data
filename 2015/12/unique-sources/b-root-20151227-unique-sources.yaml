@@ -1,0 +1,9 @@
+---
+service: b.root-servers.org
+start-period: '2015-12-27T00:00:00Z'
+end-period: '2015-12-27T23:59:59Z'
+metric: unique-sources
+num-sources-ipv4: 2710546
+num-sources-ipv6: 55688
+num-sources-ipv6-aggregate: 34506
+

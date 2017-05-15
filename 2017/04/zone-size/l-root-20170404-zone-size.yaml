@@ -1,0 +1,11 @@
+---
+version: rssac002v3
+service: l.root-servers.net
+start-period: '2017-04-04T00:00:00Z'
+metric: zone-size
+size:
+  '2017040400': 1597252
+  '2017040401': 1597252
+  '2017040402': 1597252
+  '2017040403': 1597252
+

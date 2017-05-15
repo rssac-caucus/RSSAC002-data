@@ -1,0 +1,9 @@
+---
+version: rssac002v3
+service: l.root-servers.net
+start-period: '2016-09-26T00:00:00Z'
+metric: unique-sources
+num-sources-ipv4: 850002
+num-sources-ipv6: 119214
+num-sources-ipv6-aggregate: 87771
+

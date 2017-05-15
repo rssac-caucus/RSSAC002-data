@@ -1,0 +1,14 @@
+---
+service: k.root-servers.net
+metric: rcode-volume
+start-period: 2015-05-30T00:00:00Z
+end-period: 2015-05-30T23:59:59Z
+rcodes:
+  0: 795389054
+  1: 574092
+  16: 3
+  2: 2707
+  3: 1304015217
+  4: 8589
+  5: 38029
+  9: 9

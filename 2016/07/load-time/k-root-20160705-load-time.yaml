@@ -1,0 +1,8 @@
+---
+service: k.root-servers.net
+metric: load-time
+start-period: 2016-07-05T00:00:00Z
+end-period: 2016-07-05T23:59:59Z
+time:
+  2016070500: 24
+  2016070501: 10

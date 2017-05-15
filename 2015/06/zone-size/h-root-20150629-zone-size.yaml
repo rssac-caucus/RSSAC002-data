@@ -1,0 +1,8 @@
+---
+service: h.root-servers.net
+metric: zone-size
+start-period: '2015-06-29T00:00:00Z'
+end-period: '2015-06-29T23:59:59Z'
+size:
+  2015062900: 618620
+  2015062901: 628588

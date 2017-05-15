@@ -1,0 +1,13 @@
+---
+service: e.root-servers.net
+start-period: '2017-01-22T00:00:00Z'
+version: rssac002v3
+metric: traffic-volume
+dns-udp-queries-received-ipv4: 2480220763
+dns-udp-queries-received-ipv6: 228543476
+dns-tcp-queries-received-ipv4: 263268881
+dns-tcp-queries-received-ipv6: 18276085
+dns-udp-responses-sent-ipv4: 2184229884
+dns-udp-responses-sent-ipv6: 213016987
+dns-tcp-responses-sent-ipv4: 269300454
+dns-tcp-responses-sent-ipv6: 18354880

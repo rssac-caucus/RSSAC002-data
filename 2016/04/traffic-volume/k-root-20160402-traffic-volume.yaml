@@ -1,0 +1,13 @@
+---
+service: k.root-servers.net
+metric: traffic-volume
+start-period: 2016-04-02T00:00:00Z
+end-period: 2016-04-02T23:59:59Z
+dns-udp-queries-received-ipv4: 3837020773
+dns-udp-queries-received-ipv6: 312552370
+dns-tcp-queries-received-ipv4: 37510372
+dns-tcp-queries-received-ipv6: 491410
+dns-udp-responses-sent-ipv4: 3765648234
+dns-udp-responses-sent-ipv6: 312466649
+dns-tcp-responses-sent-ipv4: 42766052
+dns-tcp-responses-sent-ipv6: 498967

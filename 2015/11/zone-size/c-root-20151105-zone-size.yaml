@@ -1,0 +1,8 @@
+---
+service: c.root-servers.net
+start-period: '2015-11-05T00:00:00Z'
+end-period: '2015-11-05T23:59:59Z'
+metric: zone-size
+size:
+  '2015110500':  707165
+  '2015110501':  707165

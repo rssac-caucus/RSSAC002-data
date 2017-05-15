@@ -1,0 +1,8 @@
+---
+service: k.root-servers.net
+metric: unique-sources
+start-period: 2016-03-29T00:00:00Z
+end-period: 2016-03-29T23:59:59Z
+num-sources-ipv4: 3092800
+num-sources-ipv6: 204245
+num-sources-ipv6-aggregate: 129882

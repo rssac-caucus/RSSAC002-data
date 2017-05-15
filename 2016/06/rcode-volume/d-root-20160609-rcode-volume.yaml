@@ -1,0 +1,14 @@
+---
+service: d.root-servers.net
+start-period: '2016-06-09T00:00:00Z'
+end-period: '2016-06-09T23:59:59Z'
+metric: rcode-volume
+rcodes:
+   0: 1472069817
+   1: 657687
+   2: 574546
+   3: 4496185229
+   4: 1822
+   5: 1126569
+   9: 16661
+   16: 17

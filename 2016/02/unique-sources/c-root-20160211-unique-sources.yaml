@@ -1,0 +1,8 @@
+---
+service: c.root-servers.net
+start-period: '2016-02-11T00:00:00Z'
+end-period: '2016-02-11T23:59:59Z'
+metric: unique-sources
+num-sources-ipv4: 3384564
+num-sources-ipv6: 88432
+num-sources-ipv6-aggregate: 52582

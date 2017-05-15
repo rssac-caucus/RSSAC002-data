@@ -1,0 +1,8 @@
+---
+service: b.root-servers.net
+start-period: '2016-04-16T00:00:00Z'
+end-period: '2016-04-16T23:59:59Z'
+metric: zone-size
+size:
+  2016041600: 872394
+  2016041601: 872394
