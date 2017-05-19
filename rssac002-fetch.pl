@@ -163,12 +163,12 @@ sub curl_cmd($$$) {
 			'-H', "'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'",
 			'-H', "'Accept-Language: en-US,en;q=0.5'",
 			'--compressed',
-			'-H', "'Referer: http://www.disa.mil/G-Root-Stats?FilePath=${Y}/${M}/$m'",
+			'-H', "'Referer: http://www.disa.mil/G-Root-Stats?FilePath=${Y}/${M}/${metric}'",
 			'-H', "'Content-Type: application/x-www-form-urlencoded'",
 			'-H', "'DNT: 1'",
 			'-H', "'Connection: keep-alive'",
 			'-H', "'Upgrade-Insecure-Requests: 1'",
-			'--data', "'scController=Display&scAction=ReadText&FullPath=${Y}%2F${M}%2F${m}%2Fg-root-${Y}${M}${D}-$m.yaml'");
+			'--data', "'scController=Display&scAction=ReadText&FullPath=${Y}%2F${M}%2F${metric}%2Fg-root-${Y}${M}${D}-${metric}.yaml'");
 	}
 	die "no curl_cmd for $t $letter $metric";
 }
