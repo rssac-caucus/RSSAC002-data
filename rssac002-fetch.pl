@@ -1,4 +1,21 @@
 #!/usr/bin/perl
+
+#
+# This script fetches RSSAC002 YAML data files from root server operators
+#
+# The script works by calling curl(1) with the appropriate URL depending
+# on the root server, the metric, and the date for each YAML file.
+# It begins some number of days in the past (default 7, changable with
+# the --start option) and then works backward for some number of days
+# (default 10, changable with the --span option).
+#
+# Existing files are not re-fetched.  Any new YAML file downloaded is
+# (1) verified to be a valid YAML file, and (2) for the correct metric.
+# This is necessary because of the way that G-root is publishing YAML
+# files.  Note that invalid YAML files are removed and would be re-fetched
+# on subsequent runs of this command.
+#
+
 use strict;
 use warnings;
 use Getopt::Long;
@@ -8,17 +25,17 @@ use File::Temp;
 use YAML;
 $|=1;
 
-my $DAYSBACK = 7;
-my $DAYSSPAN = 10;
+my $START = 7;
+my $SPAN = 10;
 my @LETTERS = ();
 my @METRICS = ();
 
 GetOptions (
-	"days-back=i" => \$DAYSBACK,
-	"days-span=i" => \$DAYSSPAN,
+	"start=i" => \$START,
+	"span=i" => \$SPAN,
 	"letters=s" => \@LETTERS,
 	"metrics=s" => \@METRICS,
-) or die "usage: $0 --days-back days --days-span days";
+) or die "usage: $0 --start daysago --span days";
 
 @LETTERS = qw (a b c d e f g h i j k l m ) unless @LETTERS;
 @METRICS = qw ( load-time rcode-volume traffic-sizes traffic-volume unique-sources zone-size ) unless @METRICS;
@@ -26,9 +43,13 @@ GetOptions (
 print STDERR "LETTERS: ". join(' ', @LETTERS). "\n";
 print STDERR "METRICS ". join(' ', @METRICS). "\n";
 
+my $WHEN = (43200+86400*int(time/86400)) - $START * 86400;
+my $STOP = $WHEN - $SPAN * 86400;
 
-my $WHEN = (43200+86400*int(time/86400)) - $DAYSBACK * 86400;
-my $STOP = $WHEN - $DAYSSPAN * 86400;
+#
+# For most letters we can do simple HTTP requests based on these URL
+# prefixes.  G-root requires something more complex.
+#
 my $URL_PREFIXES = {
 	a => 'http://a.root-servers.org/rssac-metrics/raw/',
         b => 'http://b.root-servers.org/rssac/',
@@ -43,6 +64,12 @@ my $URL_PREFIXES = {
         l => 'http://stats.dns.icann.org/rssac/',
         m => 'https://rssac.wide.ad.jp/rssac002-metrics/',
 };
+
+#
+# These are the unix epoch times corresponding to the earliest
+# data files available from each operator.  This prevents the
+# script looking for data that does not exist.
+#
 my $PUB_START = {
 	a => 1380499200, # str2time('2013-10-01T00:00:00Z')
 	b => 1450051200, # str2time('2015-12-15T00:00:00Z')
@@ -60,6 +87,9 @@ my $PUB_START = {
 };
 my $WORKDIR = File::Temp::tempdir( 'workXXXXXXXXX', CLEANUP => 1 );
 
+#
+# Covnert unix epoch time into a year,month,day
+#
 sub ymd($) {
 	my $t = shift;
 	my $Y = POSIX::strftime('%Y', gmtime($t));
@@ -68,6 +98,9 @@ sub ymd($) {
 	return ($Y,$M,$D);
 }
 
+#
+# Construct a YAML filename for a letter, metric, and time
+#
 sub yaml_fname($$$) {
 	my $t = shift;
 	my $l = shift;
@@ -77,6 +110,9 @@ sub yaml_fname($$$) {
 	return "$l-root-$Y$M$D-$m.yaml";
 }
 
+#
+# Construct a temporary local filename for a YAML file
+#
 sub tmp_yaml($$$) {
 	my $t = shift;
 	my $l = shift;
@@ -85,6 +121,9 @@ sub tmp_yaml($$$) {
 	return join('/', $WORKDIR, yaml_fname($t,$l,$m));
 }
 
+#
+# Construct the final path name for a local YAML file
+#
 sub final_yaml($$$) {
 	my $t = shift;
 	my $l = shift;
@@ -93,6 +132,9 @@ sub final_yaml($$$) {
 	return join('/', $Y, $M, $m, yaml_fname($t,$l,$m));
 }
 
+#
+# Construct a curl(1) command to fetch a YAML file
+#
 sub curl_cmd($$$) {
 	my $t = shift;
 	my $letter = shift;
@@ -121,16 +163,19 @@ sub curl_cmd($$$) {
 			'-H', "'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'",
 			'-H', "'Accept-Language: en-US,en;q=0.5'",
 			'--compressed',
-			'-H', "'Referer: http://www.disa.mil/G-Root-Stats?FilePath=${Y}/${M}/load-time'",
+			'-H', "'Referer: http://www.disa.mil/G-Root-Stats?FilePath=${Y}/${M}/$m'",
 			'-H', "'Content-Type: application/x-www-form-urlencoded'",
 			'-H', "'DNT: 1'",
 			'-H', "'Connection: keep-alive'",
 			'-H', "'Upgrade-Insecure-Requests: 1'",
-			'--data', "'scController=Display&scAction=ReadText&FullPath=${Y}%2F${M}%2Fload-time%2Fg-root-${Y}${M}${D}-load-time.yaml'");
+			'--data', "'scController=Display&scAction=ReadText&FullPath=${Y}%2F${M}%2F${m}%2Fg-root-${Y}${M}${D}-$m.yaml'");
 	}
 	die "no curl_cmd for $t $letter $metric";
 }
 
+#
+# Make directory components for a given filename.
+#
 sub my_mkdir($) {
 	my $path = shift;
 	my @x = split('/', $path);
@@ -139,6 +184,9 @@ sub my_mkdir($) {
 	File::Path::make_path($dir);
 }
 
+#
+# Loop through time, metrics, and letters to fetch YAML files
+#
 while ($WHEN > $STOP) {
 	foreach my $m (@METRICS) {
 		foreach my $l (@LETTERS) {
