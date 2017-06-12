@@ -48,8 +48,6 @@ now include the following key/value pair:
 
 Any YAML file without a `version` should be interpreted according to [RSSAC002v2](https://www.icann.org/en/system/files/files/rssac-002-measurements-root-07jan16-en.pdf).
 
-The zone-size metric
---------------------
 
 Known Quirks
 ------------
@@ -57,7 +55,7 @@ Known Quirks
 This section describes some quriks that you might encounter while trying
 to parse the YAML files in this repository.
 
- 1. As of RSSAC002v3, only the Root Zone Maintainer is expected to publish the zone-size-metric.  With this change the `service` name has changed to `root-servers.net`.
+ 1. As of RSSAC002v3, only the Root Zone Maintainer is expected to publish the zone-size-metric.  With this change the `service` name has changed to `root-servers.net` and these files are published on the web sites for A-root and J-root beginning mid May 2017.
 
  2. Some B-root files (2016-01 to 2016-02) are published with `service: b.root-servers.org` rather than `service: b.root-servers.net`
 
