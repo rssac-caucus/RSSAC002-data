@@ -48,6 +48,11 @@ now include the following key/value pair:
 
 Any YAML file without a `version` should be interpreted according to [RSSAC002v2](https://www.icann.org/en/system/files/files/rssac-002-measurements-root-07jan16-en.pdf).
 
+Related Projects
+----------------
+
+[github.com/smutt/RSSAC002](https://github.com/smutt/RSSAC002) provides an R interface to processing and displaying the RSSAC002 data.
+
 
 Known Quirks
 ------------
