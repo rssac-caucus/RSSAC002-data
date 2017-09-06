@@ -1,0 +1,13 @@
+---
+version: rssac002v3
+service: b.root-servers.net
+start-period: '2017-08-24T00:00:00'
+metric: rcode-volume
+rcodes:
+  0: 1013435521
+  1: 915090
+  2: 618
+  3: 1319734195
+  4: 857
+  5: 1598869
+  9: 7653
