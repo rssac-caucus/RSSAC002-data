@@ -1,0 +1,8 @@
+---
+version: rssac002v3
+service: b.root-servers.net
+start-period: '2018-02-10T00:00:00'
+metric: unique-sources
+num-sources-ipv4: 3495157
+num-sources-ipv6: 170048
+num-sources-ipv6-aggregate: 108695
