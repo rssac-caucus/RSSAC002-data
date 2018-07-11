@@ -1,0 +1,9 @@
+---
+service: h.root-servers.net
+metric: zone-size
+version: rssac002v3
+start-period: '2018-06-30T00:00:00Z'
+size:
+  2018063000: 1485800
+  2018063001: 1485800
+  2018063002: 1485779
