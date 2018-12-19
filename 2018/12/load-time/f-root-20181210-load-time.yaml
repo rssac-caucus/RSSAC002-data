@@ -1,0 +1,9 @@
+---
+metric: load-time
+service: f.root-servers.net
+start-period: 2018-12-10T00:00:00Z
+time:
+  '2018121000': 42
+  '2018121001': 1381
+  '2018121002': 34
+version: rssac002v3
