@@ -227,7 +227,6 @@ while ($WHEN > $STOP) {
         		eval { $yaml = YAML::LoadFile($tmp_yaml); };
         		unless ($yaml) {
                 		print "Received non-YAML file\n";
-system "cat $tmp_yaml";
                 		next;
         		}
 			unless ($yaml->{'metric'} eq $m) {
