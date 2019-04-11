@@ -205,6 +205,20 @@ while ($WHEN > $STOP) {
 			die sprintf("curl: exited due to signal %d\n", ($? & 127)) if ($? & 127);
 			next if $?;
 			my $tmp_yaml = tmp_yaml($WHEN, $l, $m);
+			if ($l eq 'g') {
+				# G-root YAML files sometimes have missing newlines at EOF
+				if (open(T, $tmp_yaml) && seek(T, -1, 2)) {
+					my $lc;
+					sysread(T, $lc, 1);
+					unless ($lc eq "\n") {
+						print "Adding missing newline; ";
+						close(T);
+						open(T, ">>$tmp_yaml");
+						print T "\n";
+					}
+					close(T);
+				}
+			}
 			unless (-s $tmp_yaml) {
 				print "Received empty file\n";
 				next;
@@ -213,6 +227,7 @@ while ($WHEN > $STOP) {
         		eval { $yaml = YAML::LoadFile($tmp_yaml); };
         		unless ($yaml) {
                 		print "Received non-YAML file\n";
+system "cat $tmp_yaml";
                 		next;
         		}
 			unless ($yaml->{'metric'} eq $m) {
