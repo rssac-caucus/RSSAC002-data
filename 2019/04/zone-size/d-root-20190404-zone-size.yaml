@@ -1,0 +1,10 @@
+---
+version: rssac002v3
+service: d.root-servers.net
+start-period: '2019-04-04T00:00:00Z'
+end-period: '2019-04-04T23:59:59Z'
+metric: zone-size
+size:
+   2019040400: 1486722
+   2019040401: 1486722
+   2019040402: 1486721
