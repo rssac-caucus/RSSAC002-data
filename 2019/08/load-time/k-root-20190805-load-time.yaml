@@ -1,0 +1,10 @@
+---
+version: rssac002v3
+service: k.root-servers.net
+start-period: 2019-08-05T00:00:00Z
+metric: load-time
+time:
+  2019080500: 99
+  2019080501: 305
+  2019080502: 272
+  2019080503: 99
