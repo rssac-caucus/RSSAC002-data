@@ -1,0 +1,9 @@
+---
+version: rssac002v3
+service: d.root-servers.net
+start-period: '2019-08-29T00:00:00Z'
+end-period: '2019-08-29T23:59:59Z'
+metric: zone-size
+size:
+   2019082900: 1471143
+   2019082901: 1471143

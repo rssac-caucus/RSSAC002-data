@@ -1,0 +1,9 @@
+---
+metric: load-time
+service: f.root-servers.net
+start-period: 2019-09-04T00:00:00Z
+time:
+  '2019090400': 64
+  '2019090401': 65
+  '2019090402': 76
+version: rssac002v3
