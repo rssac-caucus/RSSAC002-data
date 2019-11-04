@@ -43,9 +43,6 @@ GetOptions (
 print STDERR "LETTERS: ". join(' ', @LETTERS). "\n";
 print STDERR "METRICS ". join(' ', @METRICS). "\n";
 
-my $WHEN = (43200+86400*int(time/86400)) - $START * 86400;
-my $STOP = $WHEN - $SPAN * 86400;
-
 #
 # For most letters we can do simple HTTP requests based on these URL
 # prefixes.  G-root requires something more complex.
@@ -53,7 +50,7 @@ my $STOP = $WHEN - $SPAN * 86400;
 my $URL_PREFIXES = {
 	a => 'http://a.root-servers.org/rssac-metrics/raw/',
         b => 'http://b.root-servers.org/rssac/',
-        c => 'http://c.root-servers.org/rssac002-metrics/',
+        c => 'https://c.root-servers.org/rssac002-metrics/',
         d => 'http://droot-web.maxgigapop.net/rssac002/',
         e => 'https://e.root-servers.org/rssac/',
         f => 'http://rssac-stats.isc.org/rssac002/',
@@ -185,12 +182,16 @@ sub my_mkdir($) {
 	File::Path::make_path($dir);
 }
 
+my $NOW = time;
 #
 # Loop through time, metrics, and letters to fetch YAML files
 #
-while ($WHEN > $STOP) {
+foreach my $l (@LETTERS) {
 	foreach my $m (@METRICS) {
-		foreach my $l (@LETTERS) {
+		next if 'zone-size' eq $m && 'a-root' != $l;
+		my $WHEN = (43200+86400*int($NOW/86400)) - $START * 86400;
+		my $STOP = $WHEN - $SPAN * 86400;
+		while ($WHEN > $STOP) {
 			next if $WHEN < $PUB_START->{$l};
 			my $final_yaml = final_yaml($WHEN, $l, $m);
 			print "$final_yaml ";
@@ -236,7 +237,8 @@ while ($WHEN > $STOP) {
 			my_mkdir($final_yaml);
                 	rename($tmp_yaml, $final_yaml);
 			print "Added\n";
+		} continue {
+			$WHEN -= 86400;
 		}
 	}
-	$WHEN -= 86400;
 }
