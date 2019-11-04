@@ -23,16 +23,21 @@ use POSIX;
 use File::Path;
 use File::Temp;
 use YAML;
+use Date::Parse;
 $|=1;
 
-my $START = 7;
+my $SKIP = 7;
 my $SPAN = 10;
+my $START_DATE = undef;
+my $STOP_DATE = undef;
 my @LETTERS = ();
 my @METRICS = ();
 
 GetOptions (
-	"start=i" => \$START,
+	"skip=i" => \$SKIP,
 	"span=i" => \$SPAN,
+	"start-date=s" => \$START_DATE,
+	"stop-date=s" => \$STOP_DATE,
 	"letters=s" => \@LETTERS,
 	"metrics=s" => \@METRICS,
 ) or die "usage: $0 --start daysago --span days";
@@ -182,16 +187,27 @@ sub my_mkdir($) {
 	File::Path::make_path($dir);
 }
 
+my $START;
+my $STOP;
+if (defined($START_DATE) && defined($STOP_DATE)) {
+	$START = str2time($START_DATE);
+	$STOP = str2time($STOP_DATE);
+} else {
+	$START = time - $SKIP * 86400;
+	$STOP = $START - $SPAN * 86400;
+}
+
+$START = 43200 + 86400 * int($START/86400);
+$STOP  = 43200 + 86400 * int($STOP/86400);
+
 my $NOW = time;
 #
 # Loop through time, metrics, and letters to fetch YAML files
 #
 foreach my $l (@LETTERS) {
 	foreach my $m (@METRICS) {
-		next if 'zone-size' eq $m && 'a-root' != $l;
-		my $WHEN = (43200+86400*int($NOW/86400)) - $START * 86400;
-		my $STOP = $WHEN - $SPAN * 86400;
-		while ($WHEN > $STOP) {
+		next if 'zone-size' eq $m && 'a-root' ne $l;
+		for (my $WHEN = $START ; $WHEN < $STOP; $WHEN += 86400) {
 			next if $WHEN < $PUB_START->{$l};
 			my $final_yaml = final_yaml($WHEN, $l, $m);
 			print "$final_yaml ";
@@ -237,8 +253,6 @@ foreach my $l (@LETTERS) {
 			my_mkdir($final_yaml);
                 	rename($tmp_yaml, $final_yaml);
 			print "Added\n";
-		} continue {
-			$WHEN -= 86400;
 		}
 	}
 }
