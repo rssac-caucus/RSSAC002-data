@@ -207,7 +207,11 @@ my $NOW = time;
 foreach my $l (@LETTERS) {
 	foreach my $m (@METRICS) {
 		next if 'zone-size' eq $m && 'a-root' ne $l;
-		for (my $WHEN = $START ; $WHEN < $STOP; $WHEN += 86400) {
+		#
+		# Note this is somewhat backwards.  $START is more recent (a larger number)
+		# and $STOP is further in the past (a smaller number)
+		#
+		for (my $WHEN = $START ; $WHEN > $STOP; $WHEN -= 86400) {
 			next if $WHEN < $PUB_START->{$l};
 			my $final_yaml = final_yaml($WHEN, $l, $m);
 			print "$final_yaml ";
