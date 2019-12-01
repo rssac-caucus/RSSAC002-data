@@ -1,0 +1,10 @@
+---
+version: rssac002v3
+service: d.root-servers.net
+start-period: '2019-11-23T00:00:00Z'
+end-period: '2019-11-23T23:59:59Z'
+metric: load-time
+time:
+   2019112201: 329
+   2019112300: 36
+   2019112301: 56
