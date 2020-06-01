@@ -1,0 +1,13 @@
+---
+version: rssac002v3
+service: c.root-servers.net
+start-period: '2020-05-25T00:00:00Z'
+metric: traffic-volume
+dns-tcp-queries-received-ipv4: 320256299
+dns-tcp-queries-received-ipv6: 94158204
+dns-tcp-responses-sent-ipv4: 294150865
+dns-tcp-responses-sent-ipv6: 90386713
+dns-udp-queries-received-ipv4: 5350424592
+dns-udp-queries-received-ipv6: 1343808726
+dns-udp-responses-sent-ipv4: 5019094948
+dns-udp-responses-sent-ipv6: 1306833525
