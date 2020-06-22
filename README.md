@@ -38,13 +38,18 @@ where:
 RSSAC002 Versions
 -----------------
 
-Three versions of the RSSAC002 specification have been published to date.
+Four versions of the RSSAC002 specification have been published to date.
 The YAML file format did not change between versions 1 and 2.  For version
 3, however, the YAML file format has changed for some metrics.  For this
 reason, YAML files published according to the version 3 specification
 now include the following key/value pair:
 
     version: rssac002v3
+
+Files published according to the version 4 specification
+may include the following key/value pair:
+
+    version: rssac002v4
 
 Any YAML file without a `version` should be interpreted according to [RSSAC002v2](https://www.icann.org/en/system/files/files/rssac-002-measurements-root-07jan16-en.pdf).
 
