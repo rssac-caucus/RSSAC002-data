@@ -1,6 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>302 Found</title>
-</head><body>
-<h1>Found</h1><p>The document has moved <a href="http://www.disa.mil/g-root-stats">here</a>.</p>
-</body></html>
+---
+version: rssac002v3
+service: g.root-servers.net
+metric: load-time
+start-period: '2016-11-26T00:00:00Z'
+time:
+  2016112600: 6
+  2016112601: 7
