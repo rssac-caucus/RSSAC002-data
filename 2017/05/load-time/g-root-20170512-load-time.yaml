@@ -1,3 +1,9 @@
-<html><head><title>Object moved</title></head><body>
-<h2>Object moved to <a href="/tools/General-Error.htm">here</a>.</h2>
-</body></html>
+---
+version: rssac002v3
+service: g.root-servers.net
+metric: load-time
+start-period: '2017-05-12T00:00:00Z'
+time:
+  2017051200: 9
+  2017051201: 8
+  2017051202: 9
