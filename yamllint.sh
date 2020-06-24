@@ -2,7 +2,6 @@
 set -e
 
 cd `dirname $0`
-cd ..
 
 if git branch | grep -q '\* clean' ; then
 	true
