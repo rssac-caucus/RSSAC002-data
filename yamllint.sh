@@ -2,6 +2,7 @@
 set -e
 
 cd `dirname $0`
+mkdir -p yamllint
 
 if git branch | grep -q '\* clean' ; then
 	true
