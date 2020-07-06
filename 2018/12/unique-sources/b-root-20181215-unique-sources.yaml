@@ -1,7 +1,7 @@
 ---
 version: rssac002v3
 service: b.root-servers.net
-start-period: '2018-12-15T00:00:00'
+start-period: 2018-12-15T00:00:00Z
 metric: unique-sources
 num-sources-ipv4: 3352536
 num-sources-ipv6: 222186

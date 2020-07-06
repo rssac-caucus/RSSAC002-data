@@ -1,7 +1,7 @@
 ---
 version: rssac002v3
 service: b.root-servers.net
-start-period: '2018-10-21T00:00:00'
+start-period: 2018-10-21T00:00:00Z
 metric: traffic-sizes
 udp-request-sizes:
   16-31: 43640017
