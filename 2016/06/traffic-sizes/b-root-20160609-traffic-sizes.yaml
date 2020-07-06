@@ -1,7 +1,7 @@
 ---
 service: b.root-servers.net
-start-period: '2016-06-09T00:00:00'
-end-period: '2016-06-09T23:59:59'
+start-period: 2016-06-09T00:00:00Z
+end-period: 2016-06-09T23:59:59Z
 metric: traffic-sizes
 udp-request-sizes:
   16-31: 26964805

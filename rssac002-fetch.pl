@@ -63,7 +63,7 @@ my $URL_PREFIXES = {
         i => 'https://www.netnod.se/rssac002-metrics/',
         j => 'http://j.root-servers.org/rssac-metrics/raw/',
         k => 'https://www-static.ripe.net/dynamic/rssac002-metrics/',
-        l => 'http://stats.dns.icann.org/rssac/',
+        l => 'https://stats.dns.icann.org/rssac/',
         m => 'https://rssac.wide.ad.jp/rssac002-metrics/',
 };
 
