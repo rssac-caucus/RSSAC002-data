@@ -3,6 +3,6 @@ service: e.root-servers.net
 start-period: '2018-06-09T00:00:00Z'
 version: rssac002v3
 metric: unique-sources
-num-sources-ipv4: 1962378.0
-num-sources-ipv6: 148079.0
-num-sources-ipv6-aggregate: 98381.0
+num-sources-ipv4: 1962378
+num-sources-ipv6: 148079
+num-sources-ipv6-aggregate: 98381
