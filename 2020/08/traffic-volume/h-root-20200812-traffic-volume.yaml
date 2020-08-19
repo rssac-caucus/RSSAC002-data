@@ -1,0 +1,13 @@
+---
+service: h.root-servers.net
+metric: traffic-volume
+version: rssac002v4
+start-period: 2020-08-12T00:00:00Z
+dns-udp-queries-received-ipv4: 6489589382
+dns-udp-queries-received-ipv6: 1440594777
+dns-tcp-queries-received-ipv4: 139743532
+dns-tcp-queries-received-ipv6: 67335978
+dns-udp-responses-sent-ipv4: 6482107646
+dns-udp-responses-sent-ipv6: 1438490907
+dns-tcp-responses-sent-ipv4: 131443607
+dns-tcp-responses-sent-ipv6: 67899143
