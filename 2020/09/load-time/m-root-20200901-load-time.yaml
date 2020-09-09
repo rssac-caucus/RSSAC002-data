@@ -1,0 +1,8 @@
+---
+version: rssac002v4
+service: m.root-servers.net
+start-period: 2020-09-01T00:00:00Z
+metric: load-time
+time:
+  2020090100: 24
+  2020090101: 32407
