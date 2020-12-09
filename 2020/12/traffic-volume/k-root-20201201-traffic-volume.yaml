@@ -1,0 +1,13 @@
+---
+version: rssac002v4
+service: k.root-servers.net
+start-period: 2020-12-01T00:00:00Z
+metric: traffic-volume
+dns-udp-queries-received-ipv4: 9181281906
+dns-udp-queries-received-ipv6: 2106683903
+dns-tcp-queries-received-ipv4: 185712207
+dns-tcp-queries-received-ipv6: 145931870
+dns-udp-responses-sent-ipv4: 9175135097
+dns-udp-responses-sent-ipv6: 2100914656
+dns-tcp-responses-sent-ipv4: 177169171
+dns-tcp-responses-sent-ipv6: 136922284
