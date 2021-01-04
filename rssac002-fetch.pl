@@ -6,7 +6,7 @@
 # The script works by calling curl(1) with the appropriate URL depending
 # on the root server, the metric, and the date for each YAML file.
 # It begins some number of days in the past (default 7, changable with
-# the --start option) and then works backward for some number of days
+# the --skip option) and then works backward for some number of days
 # (default 10, changable with the --span option).
 #
 # Existing files are not re-fetched.  Any new YAML file downloaded is
@@ -40,7 +40,7 @@ GetOptions (
 	"stop-date=s" => \$STOP_DATE,
 	"letters=s" => \@LETTERS,
 	"metrics=s" => \@METRICS,
-) or die "usage: $0 --start daysago --span days";
+) or die "usage: $0 --skip daysago --span days | --start-date yyyy-mm-dd --stop-date yyyy-mm-dd";
 
 @LETTERS = qw (a b c d e f g h i j k l m ) unless @LETTERS;
 @METRICS = qw ( load-time rcode-volume traffic-sizes traffic-volume unique-sources zone-size ) unless @METRICS;
