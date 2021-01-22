@@ -1,12 +1,12 @@
 ---
 dns-tcp-queries-received-ipv4: 344397845
-dns-tcp-queries-received-ipv6: 33912027
+dns-tcp-queries-received-ipv6: 33912025
 dns-tcp-responses-sent-ipv4: 344393539
-dns-tcp-responses-sent-ipv6: 33906821
+dns-tcp-responses-sent-ipv6: 33906820
 dns-udp-queries-received-ipv4: 8797689139
-dns-udp-queries-received-ipv6: 1802593541
-dns-udp-responses-sent-ipv4: 8535740657
-dns-udp-responses-sent-ipv6: 1797492204
+dns-udp-queries-received-ipv6: 1802593540
+dns-udp-responses-sent-ipv4: 8535740656
+dns-udp-responses-sent-ipv6: 1797492200
 metric: traffic-volume
 service: f.root-servers.net
 start-period: 2018-08-28T00:00:00Z
