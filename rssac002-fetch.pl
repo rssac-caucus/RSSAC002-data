@@ -53,7 +53,7 @@ print STDERR "METRICS ". join(' ', @METRICS). "\n";
 # prefixes.  G-root requires something more complex.
 #
 my $URL_PREFIXES = {
-	a => 'http://a.root-servers.org/rssac-metrics/raw/',
+	a => 'https://a.root-servers.org/rssac-metrics/raw/',
         b => 'http://b.root-servers.org/rssac/',
         c => 'https://c.root-servers.org/rssac002-metrics/',
         d => 'http://droot-web.maxgigapop.net/rssac002/',
@@ -61,7 +61,7 @@ my $URL_PREFIXES = {
         f => 'http://rssac-stats.isc.org/rssac002/',
         h => 'https://h.root-servers.org/rssac002-metrics/',
         i => 'https://www.netnod.se/rssac002-metrics/',
-        j => 'http://j.root-servers.org/rssac-metrics/raw/',
+        j => 'https://j.root-servers.org/rssac-metrics/raw/',
         k => 'https://www-static.ripe.net/dynamic/rssac002-metrics/',
         l => 'https://stats.dns.icann.org/rssac/',
         m => 'https://rssac.wide.ad.jp/rssac002-metrics/',
