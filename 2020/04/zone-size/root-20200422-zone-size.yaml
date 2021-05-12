@@ -1,0 +1,8 @@
+---
+version: rssac002v3
+service: root-servers.net
+start-period: '2020-04-22T00:00:00Z'
+metric: zone-size
+size:
+  2020042200: 1308557
+  2020042201: 1307789
