@@ -1,0 +1,9 @@
+---
+version: rssac002v3
+service: root-servers.net
+start-period: '2019-12-09T00:00:00Z'
+metric: zone-size
+size:
+  2019120900: 1460725
+  2019120901: 1460725
+  2019120902: 1460736
