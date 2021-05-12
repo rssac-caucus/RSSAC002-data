@@ -108,7 +108,9 @@ sub yaml_fname($$$) {
 	my $l = shift;
 	my $m = shift;
 	my ($Y,$M,$D) = ymd($t);
-	return "root-$Y$M$D-$m.yaml" if 'zone-size' eq $m && ('a' eq $l || 'j' eq $l);
+	if ('zone-size' eq $m && ('a' eq $l || 'j' eq $l)) {
+		return "root-$Y$M$D-$m.yaml" if "$Y-$M-$D" ge '2017-04-01';
+	}
 	return "$l-root-$Y$M$D-$m.yaml";
 }
 
@@ -206,7 +208,7 @@ my $NOW = time;
 #
 foreach my $l (@LETTERS) {
 	foreach my $m (@METRICS) {
-		next if 'zone-size' eq $m && 'a-root' ne $l;
+		next if 'zone-size' eq $m && 'a' ne $l;
 		#
 		# Note this is somewhat backwards.  $START is more recent (a larger number)
 		# and $STOP is further in the past (a smaller number)
