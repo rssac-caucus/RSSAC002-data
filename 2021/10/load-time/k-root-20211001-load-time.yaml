@@ -1,0 +1,9 @@
+---
+version: rssac002v4
+service: k.root-servers.net
+start-period: 2021-10-01T00:00:00Z
+metric: load-time
+time:
+  2021100100: 15
+  2021100101: 10
+  2021100102: 11

@@ -1,0 +1,9 @@
+---
+version: rssac002v3
+service: root-servers.net
+start-period: '2021-10-05T00:00:00Z'
+metric: zone-size
+size:
+  2021100500: 1293671
+  2021100501: 1293671
+  2021100502: 1292748
