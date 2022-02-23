@@ -1,0 +1,13 @@
+---
+version: rssac002v4
+service: l.root-servers.net
+start-period: 2022-02-16T00:00:00Z
+metric: traffic-volume
+dns-udp-queries-received-ipv4: 6081901950
+dns-udp-queries-received-ipv6: 2244834744
+dns-tcp-queries-received-ipv6: 53097954
+dns-tcp-queries-received-ipv4: 130050888
+dns-udp-responses-sent-ipv4: 6047558317
+dns-udp-responses-sent-ipv6: 2245334129
+dns-tcp-responses-sent-ipv6: 53058257
+dns-tcp-responses-sent-ipv4: 129844021
