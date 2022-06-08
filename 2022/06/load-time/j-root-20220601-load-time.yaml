@@ -1,0 +1,10 @@
+---
+version: rssac002v4
+service: j.root-servers.net
+start-period: '2022-06-01T00:00:00Z'
+metric: load-time
+time:
+  2022060100: 6
+  2022060101: 9
+  2022060102: 6
+  2022060103: 6
