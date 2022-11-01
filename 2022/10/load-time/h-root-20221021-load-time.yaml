@@ -1,0 +1,9 @@
+---
+service: h.root-servers.net
+metric: load-time
+version: rssac002v4
+start-period: 2022-10-21T00:00:00Z
+time:
+  2022102100: 5
+  2022102101: 10
+  2022102102: 5
