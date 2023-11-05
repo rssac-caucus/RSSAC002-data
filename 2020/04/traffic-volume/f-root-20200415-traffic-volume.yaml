@@ -1,13 +1,13 @@
 ---
-dns-tcp-queries-received-ipv4: 723846201
-dns-tcp-queries-received-ipv6: 130842715
-dns-tcp-responses-sent-ipv4: 723844224
-dns-tcp-responses-sent-ipv6: 130836855
-dns-udp-queries-received-ipv4: 14345064648
-dns-udp-queries-received-ipv6: 2994011525
-dns-udp-responses-sent-ipv4: 13892252962
-dns-udp-responses-sent-ipv6: 2982739844
+dns-tcp-queries-received-ipv4: 723837937
+dns-tcp-queries-received-ipv6: 130842565
+dns-tcp-responses-sent-ipv4: 723835804
+dns-tcp-responses-sent-ipv6: 130836535
+dns-udp-queries-received-ipv4: 14344987858
+dns-udp-queries-received-ipv6: 2994010389
+dns-udp-responses-sent-ipv4: 13892177198
+dns-udp-responses-sent-ipv6: 2982738390
 metric: traffic-volume
 service: f.root-servers.net
 start-period: 2020-04-15T00:00:00Z
-version: rssac002v3
+version: rssac002v4
