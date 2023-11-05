@@ -58,7 +58,7 @@ my $URL_PREFIXES = {
         c => 'https://c.root-servers.org/rssac002-metrics/',
         d => 'http://droot-web.maxgigapop.net/rssac002/',
         e => 'https://e.root-servers.org/rssac/',
-        f => 'http://rssac-stats.isc.org/rssac002/',
+        f => 'https://rssac-stats.isc.org/rssac002/',
         h => 'https://h.root-servers.org/rssac002-metrics/',
         i => 'https://www.netnod.se/rssac002-metrics/',
         j => 'https://j.root-servers.org/rssac-metrics/raw/',
@@ -250,6 +250,8 @@ foreach my $l (@LETTERS) {
         		eval { $yaml = YAML::LoadFile($tmp_yaml); };
         		unless ($yaml) {
                 		print "Received non-YAML file\n";
+				system "cat $tmp_yaml";
+				exit(1);
                 		next;
         		}
 			unless ($yaml->{'metric'} eq $m) {
