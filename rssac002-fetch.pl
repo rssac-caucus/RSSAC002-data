@@ -32,6 +32,7 @@ my $START_DATE = undef;
 my $STOP_DATE = undef;
 my @LETTERS = ();
 my @METRICS = ();
+my $DEBUG = 0;
 
 GetOptions (
 	"skip=i" => \$SKIP,
@@ -40,6 +41,7 @@ GetOptions (
 	"stop-date=s" => \$STOP_DATE,
 	"letters=s" => \@LETTERS,
 	"metrics=s" => \@METRICS,
+	"debug" => \$DEBUG,
 ) or die "usage: $0 --skip daysago --span days | --start-date yyyy-mm-dd --stop-date yyyy-mm-dd";
 
 @LETTERS = qw (a b c d e f g h i j k l m ) unless @LETTERS;
@@ -250,8 +252,8 @@ foreach my $l (@LETTERS) {
         		eval { $yaml = YAML::LoadFile($tmp_yaml); };
         		unless ($yaml) {
                 		print "Received non-YAML file\n";
-				system "cat $tmp_yaml";
-				exit(1);
+				system "cat $tmp_yaml" if $DEBUG;
+				exit(1) if $DEBUG;
                 		next;
         		}
 			unless ($yaml->{'metric'} eq $m) {
