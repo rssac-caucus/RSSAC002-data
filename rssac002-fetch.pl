@@ -42,7 +42,7 @@ GetOptions (
 	"letters=s" => \@LETTERS,
 	"metrics=s" => \@METRICS,
 	"debug" => \$DEBUG,
-) or die "usage: $0 --skip daysago --span days | --start-date yyyy-mm-dd --stop-date yyyy-mm-dd";
+) or die "usage: $0 --skip daysago --span days | --start-date yyyy-mm-dd --stop-date yyyy-mm-dd\n\t--letters x--metrics metric --debug\n";
 
 @LETTERS = qw (a b c d e f g h i j k l m ) unless @LETTERS;
 @METRICS = qw ( load-time rcode-volume traffic-sizes traffic-volume unique-sources zone-size ) unless @METRICS;
