@@ -1,0 +1,10 @@
+---
+metric: load-time
+service: b.root-servers.net
+start-period: '2022-06-03T00:00:00Z'
+time:
+  2022060300: 30
+  2022060301: 16
+  2022060302: 16
+  2022060303: 12
+version: rssac002v5
