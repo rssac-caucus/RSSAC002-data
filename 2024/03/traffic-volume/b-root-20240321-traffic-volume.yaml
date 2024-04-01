@@ -1,0 +1,17 @@
+---
+version: rssac002v5
+service: b.root-servers.net
+start-period: 2024-03-21T00:00:00Z
+metric: traffic-volume
+dns-udp-queries-received-ipv4: 6231922764
+dns-udp-queries-received-ipv6: 1738287571
+dns-tcp-queries-received-ipv4: 133507579
+dns-tcp-queries-received-ipv6: 35816889
+b-dns-tls-queries-received-ipv4: 107932550
+b-dns-tls-queries-received-ipv6: 107134351
+dns-udp-responses-sent-ipv4: 6205030890
+dns-udp-responses-sent-ipv6: 1736563167
+dns-tcp-responses-sent-ipv4: 132940221
+dns-tcp-responses-sent-ipv6: 34960272
+b-dns-tls-queries-sent-ipv4: 107932095
+b-dns-tls-queries-sent-ipv6: 107134344
