@@ -1,0 +1,9 @@
+---
+version: rssac002v4
+metric: load-time
+service: g.root-servers.net
+start-period: 2024-06-01T00:00:00Z
+time:
+  2024060100: 25
+  2024060101: 5
+  2024060102: 8
