@@ -1,0 +1,9 @@
+---
+version: rssac002v4
+service: d.root-servers.net
+start-period: 2025-02-23T00:00:00Z
+end-period: 2025-02-23T23:59:59Z
+metric: unique-sources
+num-sources-ipv4: 5449936
+num-sources-ipv6: 1161014
+num-sources-ipv6-aggregate: 420455
