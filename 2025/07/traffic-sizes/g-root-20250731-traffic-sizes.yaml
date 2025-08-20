@@ -1,0 +1,9 @@
+---
+version: rssac002v5
+service: g.root-servers.net
+start-period: 2025-07-31T00:00:00Z
+metric: traffic-sizes
+udp-request-sizes:
+tcp-request-sizes:
+udp-response-sizes:
+tcp-response-sizes:
