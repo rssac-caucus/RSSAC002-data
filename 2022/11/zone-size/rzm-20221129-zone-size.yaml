@@ -1,0 +1,9 @@
+---
+version: rssac002v4
+service: root-servers.net
+start-period: '2022-11-29T00:00:00Z'
+metric: zone-size
+size:
+  2022112900: 1332468
+  2022112901: 1333685
+  2022112902: 1335517

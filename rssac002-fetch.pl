@@ -111,6 +111,7 @@ sub yaml_fname($$$) {
 	my $m = shift;
 	my ($Y,$M,$D) = ymd($t);
 	if ('zone-size' eq $m && ('a' eq $l || 'j' eq $l)) {
+		return "rzm-$Y$M$D-$m.yaml" if "$Y-$M-$D" ge '2021-10-18';
 		return "root-$Y$M$D-$m.yaml" if "$Y-$M-$D" ge '2017-04-01';
 	}
 	return "$l-root-$Y$M$D-$m.yaml";
