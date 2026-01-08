@@ -197,6 +197,7 @@ my $STOP;
 if (defined($START_DATE) && defined($STOP_DATE)) {
 	$START = str2time($START_DATE);
 	$STOP = str2time($STOP_DATE);
+	($START, $STOP) = ($STOP, $START) if $START < $STOP;
 } else {
 	$START = time - $SKIP * 86400;
 	$STOP = $START - $SPAN * 86400;
