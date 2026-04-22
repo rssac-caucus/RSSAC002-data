@@ -1,0 +1,10 @@
+---
+version: rssac002v4
+service: d.root-servers.net
+start-period: 2026-04-09T00:00:00Z
+end-period: 2026-04-09T23:59:59Z
+metric: load-time
+time:
+   2026040900: 35
+   2026040901: 42
+   2026040902: 76
