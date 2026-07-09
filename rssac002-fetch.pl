@@ -51,8 +51,8 @@ print STDERR "LETTERS: ". join(' ', @LETTERS). "\n";
 print STDERR "METRICS ". join(' ', @METRICS). "\n";
 
 #
-# For most letters we can do simple HTTP requests based on these URL
-# prefixes.  G-root requires something more complex.
+# For all letters we can do simple HTTP requests based on these URL
+# prefixes.
 #
 my $URL_PREFIXES = {
 	a => 'https://a.root-servers.org/rssac-metrics/raw/',
@@ -61,6 +61,7 @@ my $URL_PREFIXES = {
         d => 'https://www.droot.maxgigapop.net/rssac002/',
         e => 'https://e.root-servers.org/rssac/',
         f => 'https://rssac-stats.isc.org/rssac002/',
+        g => 'https://www.disa.mil/G-Root/G-Root-Stats/',
         h => 'https://h.root-servers.org/rssac002-metrics/',
         i => 'https://www.netnod.se/rssac002-metrics/',
         j => 'https://j.root-servers.org/rssac-metrics/raw/',
@@ -157,26 +158,6 @@ sub curl_cmd($$$) {
 			'-o', $tmp_yaml,
 			'-H', "'User-Agent: rssac002-fetch.pl'",
 			$URL_PREFIXES->{$letter}.$final_yaml);
-	}
-	if ('g' eq $letter) {
-		return join(' ',
-			'curl -s -S',
-			'--connect-timeout', '3',
-			'--fail',
-			'--insecure',
-			'-o', $tmp_yaml,
-			'https://www.disa.mil/G-Root/G-Root-Stats',
-			'-H', "'Host: www.disa.mil'",
-			'-H', "'User-Agent: rssac002-fetch.pl'",
-			'-H', "'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'",
-			'-H', "'Accept-Language: en-US,en;q=0.5'",
-			'--compressed',
-			'-H', "'Referer: http://www.disa.mil/G-Root-Stats?FilePath=${Y}/${M}/${metric}'",
-			'-H', "'Content-Type: application/x-www-form-urlencoded'",
-			'-H', "'DNT: 1'",
-			'-H', "'Connection: keep-alive'",
-			'-H', "'Upgrade-Insecure-Requests: 1'",
-			'--data', "'scController=Display&scAction=ReadText&FullPath=${Y}%2F${M}%2F${metric}%2Fg-root-${Y}${M}${D}-${metric}.yaml'");
 	}
 	die "no curl_cmd for $t $letter $metric";
 }
