@@ -178,12 +178,24 @@ my $STOP;
 if (defined($START_DATE) && defined($STOP_DATE)) {
 	$START = str2time($START_DATE);
 	$STOP = str2time($STOP_DATE);
+	#
+	# Swap START / STOP if given in the unexpected order
+	#
 	($START, $STOP) = ($STOP, $START) if $START < $STOP;
+	#
+	# When --start / --stop are explicitly given, subtract one day
+	# from STOP to make it inclusive.
+	#
+	$STOP -= 86400;
 } else {
 	$START = time - $SKIP * 86400;
 	$STOP = $START - $SPAN * 86400;
 }
 
+#
+# Align times to Noon rather than Midnight, to avoid any possible daylight
+# savings time complications.
+#
 $START = 43200 + 86400 * int($START/86400);
 $STOP  = 43200 + 86400 * int($STOP/86400);
 
